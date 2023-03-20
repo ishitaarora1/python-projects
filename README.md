@@ -23,7 +23,7 @@ To analyse the latest 12 months of cyclistic  bike share trips data ,  to unders
 # **Data Source**
 ​
 the Cyclistic's historical trip data , has been made available on kaggle.com , as public dataset  by
-Motivate International Inc under this license. https://ride.divvybikes.com/data-license-agreement
+Motivate International Inc under this license. <"https://ride.divvybikes.com/data-license-agreement"> 
 
 # **Importing the required libraries**
 
@@ -292,10 +292,66 @@ sns.histplot(x = "month", data = df, hue = 'member_casual', palette = 'Pastel1')
 
 plt.title('Monthly Count of Rides')
 
-<img width="594" alt="monthly count of rides" src="https://1drv.ms/u/s!AqZQPt2nIkTMg1ORIOWumh1Q3VqP?e=3pyfcb">
+#### #Note- click on the given links to see each of the visuals.
 
 
 <"https://1drv.ms/u/s!AqZQPt2nIkTMg1ORIOWumh1Q3VqP?e=3pyfcb">
+
+
+## ***Findings***
+
+
+* for casual riders,the maximum number of rides are taken in july , wheras for members , it is in august.
+* 
+*  the maximum number of rides are in the month of july and august overall , with the summer season seeing the no of rides at its  peak.
+*  
+* The winter season (december to february , has the least number of rides.
+
+
+## ***To visualise the no of rides taken by casuals and members  by each day of week***
+
+plt.figure(figsize = (10,6))
+
+sns.histplot(x = "day_of_Week", data = df, hue = 'member_casual', palette = 'Pastel1')
+
+plt.title('weekly Count of Rides')
+
+
+<"https://1drv.ms/u/s!AqZQPt2nIkTMg1RivpEpQuzVpiwS?e=ldXgXi">
+
+## ***Findings***
+
+#### #From the visualisation , we can clearly see that****
+
+ 1) For casual riders , there is a peak in the no of rides on weekends
+ 
+ 2) For members , the no of rides taken ,remain more or less consistent throughout the week , with a slight peak on Thursday.
+
+
+## ***To visualise the comparative count of casual riders and members throught the week.*****
+
+casual = df.loc[df['member_casual'] == 'casual']
+
+member = df.loc[df['member_casual'] == 'member']
+
+
+#### # creating two different dataframes containing only members and casual riders respectively.
+
+plt.figure(figsize = (10,6))
+
+sns.histplot(x = "day_of_Week", data = casual, hue = 'rideable_type')
+
+plt.title("Casual")
+
+plt.figure(figsize = (10,6))
+
+sns.histplot(x = "day_of_Week", data = member, hue = 'rideable_type')
+
+plt.title("Member")
+
+Weekly count of members<"https://1drv.ms/u/s!AqZQPt2nIkTMg1RivpEpQuzVpiwS?e=ldXgXi">
+
+
 
 
 
