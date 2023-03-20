@@ -302,9 +302,9 @@ plt.title('Monthly Count of Rides')
 
 
 * for casual riders,the maximum number of rides are taken in july , wheras for members , it is in august.
-* 
+ 
 *  the maximum number of rides are in the month of july and august overall , with the summer season seeing the no of rides at its  peak.
-*  
+  
 * The winter season (december to february , has the least number of rides.
 
 
