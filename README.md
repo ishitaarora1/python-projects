@@ -208,18 +208,26 @@ df['day_of_Week']=df['started_at'].dt.day_name()
 
 # **Analysis of Data**
 
+
+
 #### most popular day of week to cycle\
 
-df.groupby("member_casual")['day_of_Week'].describe()
+df.groupby("member_casual")['day_of_Week'].describe
+
 
 #### saturday is the most popular day of week for both members and casuals.
+
+
 
 
 #### most popular month to cycle
 
 df.groupby("member_casual")['month'].describe()
 
+
 #### june is the most popular month for both members and casuals.
+
+
 
 
 #### average ride_length for members and casual riders by day of week
@@ -229,9 +237,63 @@ order_of_days=['Monday', 'Tuesday','Wednesday','Thursday','Friday','Saturday','S
 
 avg_ride_length =df.groupby(['member_casual','day_of_Week'])['ride_length'].mean()
 
+
+
 #### setting the correct order
 
 pd.DataFrame(avg_ride_length).reindex(index=order_of_days,level=1)
+
+
+#average ride_length of casuals and members by month.
+
+
+month_order =['January', 'February', 'March', 'April', 'May', 'June', "July", "August", "September", "October", "November",
+
+             "December"]
+             
+avg_ride_length = df.groupby(['member_casual','month'])['ride_length'].mean()
+
+
+#### #making it into a dataframe with the correct order of months
+
+
+pd.DataFrame(avg_ride_length).reindex(index=month_order)
+
+avg_ride_length.reindex(index=month_order,level=1)
+
+
+#### #no of rides of members and casuals by day_of_week
+
+no_of_rides= df.groupby(['member_casual','day_of_Week'])['ride_id'].count()
+
+#### #setting the correct order
+
+pd.DataFrame(no_of_rides).reindex(index=order_of_days,level=1)
+
+
+#no of rides of members and casuals in each month
+
+no_of_rides= df.groupby(['member_casual','month'])['ride_id'].count()
+
+#### #setting the correct order
+
+pd.DataFrame(no_of_rides).reindex(index=month_order,level=1)
+
+
+# **#Visualisation of Data**
+
+
+## ***To visualise the no of rides taken by casuals and members  by each month***
+
+
+plt.figure(figsize = (16,10))
+
+sns.histplot(x = "month", data = df, hue = 'member_casual', palette = 'Pastel1')
+
+plt.title('Monthly Count of Rides')
+
+<"https://1drv.ms/u/s!AqZQPt2nIkTMg1ORIOWumh1Q3VqP?e=3pyfcb">
+
 
 
 
