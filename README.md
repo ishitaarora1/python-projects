@@ -26,9 +26,13 @@ the Cyclistic's historical trip data , has been made available on kaggle.com , a
 Motivate International Inc under this license. <"https://ride.divvybikes.com/data-license-agreement"> 
 
 ## ** Data source 
- The dataset used is of the historical trip data of 12 months of 2022 . You can download and view the collection of all the months of
- datasets from this link <"https://divvy-tripdata.s3.amazonaws.com/index.html">
-
+ The dataset used is of the historical trip data of 12 months of 2022 . You can download and view the collection of data all the months of
+ 
+ 2022 from this link <"https://divvy-tripdata.s3.amazonaws.com/index.html"> .
+ 
+ Note - This data has been merged into a single dataset for working .
+ 
+ 
 # **Importing the required libraries**
 
 import pandas as pd
