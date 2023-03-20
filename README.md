@@ -28,16 +28,14 @@ Motivate International Inc under this license. https://ride.divvybikes.com/data-
 # **Importing the required libraries**
 
 import pandas as pd
-from pandas.api.types import CategoricalDtype
 
+from pandas.api.types import CategoricalDtype
 
 import seaborn as sns
 
 import matplotlib.pyplot as plt
 
-
 %matplotlib inline
-
 
 import numpy as np
 
