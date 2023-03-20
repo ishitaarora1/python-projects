@@ -69,6 +69,7 @@ df12 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclis
 # **Combining all the data into a single dataset**
 
 df=pd.concat([df1,df2,df3,df4,df5,df6,df7,df8,df9,df10,df11,df12],ignore_index=True)
+
 df
 
 # **Exploring the dataset:**
@@ -76,17 +77,25 @@ df
 
 df.shape
 
-#(5667717 rows , 13 columns)
+
+#### (5667717 rows , 13 columns)
+
+
 
 
 
 df.info(memory_usage='deep')
 
+
 #### 1.5 GB dataframe
+
+
 
 df.dtypes
 
 #### the columns-'started_at' and 'ended_at' column has been already converted to pandas'  'datetime64' format, to work with.
+
+
 
 
 df.columns
