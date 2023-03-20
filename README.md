@@ -351,6 +351,76 @@ plt.title("Member")
 
 Weekly count of members<"https://1drv.ms/u/s!AqZQPt2nIkTMg1RivpEpQuzVpiwS?e=ldXgXi">
 
+Weekly count of casual riders <"https://1drv.ms/u/s!AqZQPt2nIkTMg1RivpEpQuzVpiwS?e=ldXgXi">
+
+
+## ***Findings***
+
+
+### ****From the visualisation , we can clearly see that****
+
+1) The casual riders mostly active of weekends with an electric bike.
+
+2) The annual riders are the least active on weekends and mostly use a classic bike.
+
+
+## ***To visualise the comparative count of casual riders and members by each hour of the day.***
+
+
+hourly_count = df.groupby(['hour','member_casual'])['ride_id'].count()
+
+plt.figure(figsize = (20,10))
+
+sns.histplot(x = 'hour', data = df, hue='member_casual',palette='twilight')
+
+sns.set_style("white")
+
+sns.set_context('paper', font_scale = 3)
+
+<"https://1drv.ms/u/s!AqZQPt2nIkTMg1RivpEpQuzVpiwS?e=ldXgXi">
+
+
+## ***Findings***
+​
+### ****From the visualisation , we can clearly see that****
+​
+ the number of riders peak in the evening hours between 3pm to 7pm , with the highest number of riders at 5pm
+ 
+ 
+ 
+ ## **Summary of the analysis**
+* The summer season , including ,july and august have been found to be the most popular months for riding.
+
+* The winter season (december to february , has the least number of rides
+
+* For casual riders , there is a peak in the no of rides on weekends whereas for members , the no of rides taken ,remain more or less consistent throughout the week 
+
+ which suggests that the members have a consistent working routine and defined timings in which they use a bike unlike casual riders , who use them on weekends , and 
+ 
+ mostly at night hours for recreational purposes.
+
+
+
+
+
+## **Recommendations**
+
+#### **Maximum   riders in a year come from the six month period of May - October. The marketing team at cyclistic should run promotions during this period of the year to:**
+* increase chances to convert casual riders into annual members.
+* Increase visibility among your customers.
+ 
+#### **The company can introuduce a better and affordable pricing plan and subscription model with deals, discounts, or promotions for new members , in order to attract casual riders towards the annual membership.**
+
+
+#### **Also , the promotional campaigns should be held in the evening hours between 3pm to 7pm , in which the number of riders are maximum , in both groups , as seen from the visualisation.**
+
+
+## **Credits**
+ my work is inspired by the work of joseph stephenson and Lewis Lee's notebooks on cyclistic case study present on Kaggle.
+
+
+
+
 
 
 
