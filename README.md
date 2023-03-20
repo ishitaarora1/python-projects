@@ -292,6 +292,9 @@ sns.histplot(x = "month", data = df, hue = 'member_casual', palette = 'Pastel1')
 
 plt.title('Monthly Count of Rides')
 
+<img width="594" alt="schema_diagram" src="https://1drv.ms/u/s!AqZQPt2nIkTMg1ORIOWumh1Q3VqP?e=3pyfcb">
+
+
 <"https://1drv.ms/u/s!AqZQPt2nIkTMg1ORIOWumh1Q3VqP?e=3pyfcb">
 
 
