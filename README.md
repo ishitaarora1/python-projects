@@ -76,10 +76,11 @@ df
 
 df.shape
 
-#5667717 rows , 13 columns)
+#(5667717 rows , 13 columns)
 
 
 df.info(memory_usage='deep')
+
 #1.5 GB dataframe
 
 df.dtypes
