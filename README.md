@@ -103,7 +103,8 @@ df.columns
 
 # **Cleaning the Dataset**
 
-#now , we will drop the columns which are not relevant to the analysis
+#### #now , we will drop the columns which are not relevant to the analysis
+
 
 df=df.drop(columns=['start_station_name', 'start_station_id', 'end_station_name',
 
