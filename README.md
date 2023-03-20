@@ -40,3 +40,30 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+# **Uploading the 12 months datasets**
+
+df1 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_jan_2022.csv',parse_dates=['started_at','ended_at'])
+
+df2= pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_feb_2022.csv',parse_dates=['started_at','ended_at'])
+
+df3 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_march_2022.csv',parse_dates=['started_at','ended_at']) 
+
+df4 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_april_2022.csv',parse_dates=['started_at','ended_at'])
+
+df5 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_may_2022.csv',parse_dates=['started_at','ended_at']) 
+
+df6 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_june_2022.csv',parse_dates=['started_at','ended_at'])
+
+df7 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_july_2022.csv',parse_dates=['started_at','ended_at'])
+
+df8= pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_august_2022.csv',parse_dates=['started_at','ended_at'])
+
+df9 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_september_2022.csv',parse_dates=['started_at','ended_at']) 
+
+df10 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_october_2022.csv',parse_dates=['started_at','ended_at'])
+
+df11 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_november_2022.csv',parse_dates=['started_at','ended_at'])
+
+df12 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_december_2022.csv',parse_dates=['started_at','ended_at'])
+
+
