@@ -66,4 +66,143 @@ df11 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclis
 
 df12 = pd.read_csv('C:\\Users\\arora\\OneDrive\\Desktop\\cyclistic files\\cyclistic_data_december_2022.csv',parse_dates=['started_at','ended_at'])
 
+# **Combining all the data into a single dataset**
+
+df=pd.concat([df1,df2,df3,df4,df5,df6,df7,df8,df9,df10,df11,df12],ignore_index=True)
+df
+
+# **Exploring the dataset:**
+
+
+df.shape
+
+#5667717 rows , 13 columns)
+
+
+df.info(memory_usage='deep')
+#1.5 GB dataframe
+
+df.dtypes
+#the columns-'started_at' and 'ended_at' column has been already converted to pandas'  'datetime64' format, to work with.
+
+df.columns
+
+
+# **Cleaning the Dataset**
+
+#now , we will drop the columns which are not relevant to the analysis
+df=df.drop(columns=['start_station_name', 'start_station_id', 'end_station_name',
+       'end_station_id', 'start_lat', 'start_lng', 'end_lat', 'end_lng'])
+       
+       df
+# we have only the relevant columns left now.
+
+#we will create a column called 'ride_length' which contains the duration between start time and end time
+df['ride_length']=(df['ended_at']-df['started_at'])/pd.Timedelta(minutes=1)
+
+df
+
+#we can see some negative values in the column 'ride_length' which means that the end timing is 
+# less than the start timing and also , some values are 0 ,which is logically inaccurate. so, let's drop them.
+
+
+neg_row= df[df['ride_length']<1].index
+# shows the index of all such negative value rows
+
+
+#to drop them
+
+df=df.drop(neg_row)
+
+#drops all values less than 1
+
+
+df=df.reset_index().drop(columns='index')          
+
+#resetting the index and dropping the index of the old dataframe 
+
+#now , the dataframe containing the values less than 1 is empty , this means all irrelevant values have been dropped.
+df[df['ride_length']<1]
+
+
+let's check how many rows we are left with !
+df.shape
+
+# there are around 21 lakh rows left out of around 22 lakh rows earlier , approximately , 5.67% of rows are deleted .
+
+
+# now , let's check for any null or duplicate values
+df.isnull().sum().sum()
+
+
+df.duplicated().sum()
+
+#there are no null and duplicate values .
+
+
+# **Now , let's add some more relevant columns before we begin our analysis**
+
+# **Preparing for Analysis**
+
+ #adding the month column
+df['month']=df['ended_at'].dt.month_name()
+
+#adding the hour column
+df['hour']=df['started_at'].dt.hour
+
+#adding the year column
+df['year']=df['started_at'].dt.year
+
+#adding the weekday column
+df['day_of_Week']=df['started_at'].dt.day_name()
+
+
+# **Documentation of all the changes done to the data**
+
+1) changed the format of the columns 'started_at' and 'ended_at' to pandas' 'datetime64[ns]' format.
+
+2) deleted the columns 'start_station_name', 'start_station_id', 'end_station_name',
+       'end_station_id', 'start_lat', 'start_lng', 'end_lat', 'end_lng'.
+       
+3) created the column 'ride_length' from (('ended_at'- 'started_at) , which contained the trip duration of each rider .
+
+4) deleted all the rows where the 'ride_length' column had value <1
+
+5) extracted the year from the 'started_at' column to make a new column containing 'year of ride'.   
+
+6) extracted the month name  from the 'started_at' column to make a new column containing month of ride.  
+
+7) extracted the weekday from the 'started_at' column to make a new column containing day of week of the ride
+
+8) extracted the hour from the 'started_at' column to make a new column containing hour of the ride     
+
+
+# **Analysis of Data**
+
+#most popular day of week to cycle
+df.groupby("member_casual")['day_of_Week'].describe()
+
+#saturday is the most popular day of week for both members and casuals.
+
+
+#most popular month to cycle
+df.groupby("member_casual")['month'].describe()
+
+# june is the most popular month for both members and casuals.
+
+
+# average ride_length for members and casual riders by day of week
+order_of_days=['Monday', 'Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+
+avg_ride_length =df.groupby(['member_casual','day_of_Week'])['ride_length'].mean()
+
+#setting the correct order
+pd.DataFrame(avg_ride_length).reindex(index=order_of_days,level=1)
+
+
+
+
+
+
+
 
