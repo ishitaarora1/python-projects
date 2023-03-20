@@ -20,10 +20,14 @@ do that, however, the marketing analyst team needs to better understand how annu
 
 To analyse the latest 12 months of cyclistic  bike share trips data ,  to understand the difference between the casual riders and annual members , and eventually design effective marketing strategies  to convert casual riders into annual members ,so as to increase the profit of the company.
 
-# **Data Source**
+# **license**
 ​
 the Cyclistic's historical trip data , has been made available on kaggle.com , as public dataset  by
 Motivate International Inc under this license. <"https://ride.divvybikes.com/data-license-agreement"> 
+
+## ** Data source 
+ The dataset used is of the historical trip data of 12 months of 2022 . You can download and view the collection of all the months of
+ datasets from this link <"https://divvy-tripdata.s3.amazonaws.com/index.html">
 
 # **Importing the required libraries**
 
